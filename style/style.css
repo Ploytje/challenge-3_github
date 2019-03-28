@@ -1,0 +1,186 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Space Mono', monospace;
+	background-image: url("../image/gary-lopater-183558-unsplash.jpg");
+	border-image-width: 50%;
+	height: 100%;
+}
+/*welckom layout*/
+#welkom {
+	text-align: center;
+	font-size: 24pt;
+	margin-bottom: 20px;
+	padding-top: 15px;
+
+}
+/*invoer land*/
+#city {
+	grid-area: city;
+	background-color: #96CDFF;
+	opacity: 0.8;
+	text-align: center;
+	font-size: 14pt;
+	padding: 15px;
+
+
+}
+#getCity {
+	font-size: 12pt;
+}
+/*layout blok weer*/
+#weather {
+	grid-area: weather;
+	background-color: white;
+	opacity: 0.8;
+	text-align: center;
+	font-size: 14pt;
+	padding: 15px;
+
+
+}
+/*layout blok windkracht*/
+#windKracht {
+	grid-area: windk;
+	background-color: white;
+	opacity: 0.8;
+	text-align: center;
+	font-size: 14pt;
+	padding: 15px;
+
+
+}
+/*layout blok windKMH*/
+#windKmh {
+	grid-area: windkmh;
+	background-color: white;
+	opacity: 0.8;
+	text-align: center;
+	font-size: 14pt;
+	padding: 15px;
+
+
+}
+/*layout wind richting*/
+#windR {
+	grid-area: windr;
+	background-color: white;
+	opacity: 0.8;
+	text-align: center;
+	font-size: 14pt;
+	padding: 15px;
+
+
+}
+/*laytou blok waar je mag landen*/
+#answer {
+	grid-area: answer;
+	background-color: #96CDFF;
+	/*opacity: 0.8;*/
+	text-align: center;
+	font-size: 14pt;
+	padding: 15px;
+
+
+}
+/*opmaak grid*/
+.container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: 
+		'city'
+		'weather'
+		'windk'
+		'windkmh'
+		'windr'
+		'answer';
+		
+		grid-gap: 20px;
+}
+
+/*tabel opmaak tracffic*/
+footer {
+	background-color: white;
+	opacity: 0.8;
+	margin-top: 25px;
+}
+/*opmaak traffic*/
+tr.no-jam {
+	background-color: green;
+	color: white;
+	opacity: 0.5;
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1023px) {
+/*opmaak body*/
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		'city city weather'
+		'windk windkmh windr'
+		'answer answer answer';
+
+	}
+/*opmaak lettertype*/
+	#city, #getCity {
+		font-size: 15pt;
+	}
+/*opmaak lettertype*/
+	#weather, #windKracht, #windKmh, #windR, #answer {
+		font-size: 16pt;
+	}
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+/*opmaak body*/
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		'. city .'
+		'. weather .'
+		'windk windkmh windr'
+		'answer answer answer';
+	}
+/*opmaak lettertype*/
+	#city {
+		font-size: 18pt;
+	}
+	#getCity {
+		font-size: 17pt;
+	}
+	#weather, #windKracht, #windKmh, #windR, #answer {
+		font-size: 18pt;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+/*opmaak body*/
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-areas: 
+		'. city .'
+		'. weather .'
+		'windk windk answer'
+		'windkmh windkmh answer'
+		'windr windr answer';
+	}
+/*opmaak lettertype*/
+	#getCity {
+		font-size: 19pt;
+	}
+	#weather, #windKracht, #windKmh, #windR, #answer, #city {
+		font-size: 20pt;
+	}
+/*opmaak tekst wel of niet mag landen*/
+	#answer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+}
+
