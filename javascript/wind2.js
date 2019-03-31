@@ -33,27 +33,22 @@ function getAPIdata() {
 function onAPISucces(response) {
 	
 	// get type of weather in string format
-	var type = response.weather[0].description;
+	var type = response.wind.speed;
 
 	// get temperature in Celcius
 	var degC = Math.floor(response.main.temp - 273.15);
 
 	// render weather in DOM
-	var weatherBox = document.getElementById('weather');
+	var weatherBox = document.getElementById('windKracht');
 	weatherBox.innerHTML = degC + "&#176;C <br>" + type;
 
-	// keuze van het landen
-	if (type == "clear sky") {
-		document.getElementById('answer').innerHTML = 'Het is veilig om te landen'
-	} else {
-		document.getElementById('answer').innerHTML = 'Het is niet veilig om te landen'
-	}
+	
 };
 
 
 function onAPIError(error) {
 	console.error('Fetch request failed', error);
-	var weatherBox = document.getElementById('weather');
+	var weatherBox = document.getElementById('windKracht');
 	weatherBox.innerHTML = 'No weather data available <br /> Did you enter a valid city?'; 
 }
 

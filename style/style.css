@@ -41,8 +41,8 @@ body {
 
 }
 /*layout blok windkracht*/
-#windKracht {
-	grid-area: windk;
+#windSpeed {
+	grid-area: speed;
 	background-color: white;
 	opacity: 0.8;
 	text-align: center;
@@ -52,8 +52,8 @@ body {
 
 }
 /*layout blok windKMH*/
-#windKmh {
-	grid-area: windkmh;
+#temMin {
+	grid-area: min;
 	background-color: white;
 	opacity: 0.8;
 	text-align: center;
@@ -63,8 +63,8 @@ body {
 
 }
 /*layout wind richting*/
-#windR {
-	grid-area: windr;
+#temMax {
+	grid-area: max;
 	background-color: white;
 	opacity: 0.8;
 	text-align: center;
@@ -91,9 +91,9 @@ body {
 		grid-template-areas: 
 		'city'
 		'weather'
-		'windk'
-		'windkmh'
-		'windr'
+		'speed'
+		'min'
+		'max'
 		'answer';
 		
 		grid-gap: 20px;
@@ -119,7 +119,7 @@ tr.no-jam {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-areas: 
 		'city city weather'
-		'windk windkmh windr'
+		'speed min max'
 		'answer answer answer';
 
 	}
@@ -141,7 +141,7 @@ tr.no-jam {
 		grid-template-areas: 
 		'. city .'
 		'. weather .'
-		'windk windkmh windr'
+		'speed min max'
 		'answer answer answer';
 	}
 /*opmaak lettertype*/
@@ -164,9 +164,9 @@ tr.no-jam {
 		grid-template-areas: 
 		'. city .'
 		'. weather .'
-		'windk windk answer'
-		'windkmh windkmh answer'
-		'windr windr answer';
+		'speed speed answer'
+		'min min answer'
+		'max max answer';
 	}
 /*opmaak lettertype*/
 	#getCity {

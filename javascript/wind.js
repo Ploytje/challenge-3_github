@@ -5,9 +5,16 @@ function wind() {
 
 	// construct request
 	// var code = ['th','uk'];
-	var city = document.getElementById("landen").value;
+	// var city = document.getElementById("landen").value;
 	// var request = 'https://fourtonfish.com/hellosalut/?cc='+ code[0];
-	var request = "http://weerlive.nl/api/json-data-10min.php?key=demo&locatie=" + city 
+	// var request = "http://weerlive.nl/api/json-data-10min.php?key=demo&locatie=" + city 
+
+	var url = "https://api.openweathermap.org/data/2.5/weather";
+	var apiKey ="b0c8dafa512a0134e90df6ece3c2b7a2";
+	var city = document.getElementById("landen").value;
+
+	// construct request
+	var request = url + "?" + "appid=" + apiKey + "&" + "q=" + city;
 
 	// get current weather
 	fetch(request)
@@ -23,18 +30,14 @@ function wind() {
 		// console.log(response);
 		
 		
-		// var plek = response.liveweer[0].plaats;
-		// var samenv = response.liveweer[0].samenv;
-		var windk = response.liveweer[0].windk;
-		var windkmh = response.liveweer[0].windkmh;
-		var windr = response.liveweer[0].windr;
+		
+		var windSpeed = response.wind.speed;
+		var temMin = Math.floor(response.main.temp_min - 273.15);
+		var temMax = Math.floor(response.main.temp_max - 273.15);
 
-
-		// var plaats = document.getElementById('plaats').innerHTML = "Plaats " + plek;
-		// var samenv = document.getElementById('samenv').innerHTML = samenv;
-		var windk = document.getElementById('windKracht').innerHTML = "Windkracht: " + windk;
-		var windkmh = document.getElementById('windKmh').innerHTML = "Wind kmh:  " + windkmh;
-		var windr = document.getElementById('windR').innerHTML = "Windrichting:  " + windr;
+		var speed = document.getElementById('windSpeed').innerHTML = "Wind speed: " + windSpeed;
+		var temMin = document.getElementById('temMin').innerHTML = "Minimaal temperatuur:  " + temMin;
+		var temMax = document.getElementById('temMax').innerHTML = "Maximaal temperatuur:  " + temMax;
 
 
 	})
